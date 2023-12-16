@@ -1,5 +1,12 @@
 ---
+interface Props {
+    title: string
+}
+
+import Footer from '../components/Footer.astro';
 import '../css/main.css';
+
+const {title} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -7,9 +14,12 @@ import '../css/main.css';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Landing</title>
+    <title>My Landing | {title}</title>
 </head>
 <body>
-    <slot />
+    <main class="mx-auto container md:pt-10">
+        <slot />
+    </main>
+    <Footer />
 </body>
 </html>
